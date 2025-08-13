@@ -20,7 +20,7 @@ dependencies:
 #  record_web: ^1.0.0
 #  record_windows: ^1.0.0
 #  record_linux: '>=0.5.0 <1.0.0'
-  record_android: ^1.0.0
+#  record_android: ^1.0.0
 #  record_darwin: ^1.0.0
   record_ohos:
     path: ../record_ohos
@@ -33,12 +33,12 @@ dev_dependencies:
 flutter:
   plugin:
     platforms:
-      android:
-        default_package: record_android
+#      android:
+#        default_package: record_android
       ohos:
         default_package: record_ohos
-      ios:
-        default_package: record_darwin
+#      ios:
+#        default_package: record_darwin
 #      web:
 #        default_package: record_web
 #      windows:
