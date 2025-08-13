@@ -14,7 +14,9 @@ dependencies:
   uuid: ">=3.0.7 <5.0.0"
 
   record_platform_interface:
-    path: ../record_platform_interface
+    git:
+      url: "git@github.com:LQYaphets/fluttertpc_record_ohos.git"
+      path: "record_platform_interface"
   record_web: ^1.0.0
   record_windows: ^1.0.0
   record_linux: '>=0.5.0 <1.0.0'
