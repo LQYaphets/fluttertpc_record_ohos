@@ -1,3 +1,7 @@
+/*
+ * @Author: 柳清
+ * @Date: 2025-01-24 14:56:24
+ */
 /// Audio encoder to be used for recording.
 enum AudioEncoder {
   /// MPEG-4 AAC Low complexity
@@ -55,4 +59,6 @@ enum AudioEncoder {
   ///
   /// Suggested file extension: `pcm`
   pcm16bits,
+
+  mp3,
 }

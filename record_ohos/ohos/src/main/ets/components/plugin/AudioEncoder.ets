@@ -23,4 +23,5 @@ export class AudioEncoder{
   public static pcm16bits:string = "pcm16bits";
   public static opus:string = "opus";
   public static wav:string = "wav";
+  public static mp3:string = "mp3";
 }

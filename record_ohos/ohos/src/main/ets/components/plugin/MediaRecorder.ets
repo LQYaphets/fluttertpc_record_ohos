@@ -78,9 +78,9 @@ export class MediaRecorder implements IRecorder {
     let avRecorderProfile: media.AVRecorderProfile = {
       audioBitrate: config.bitRate,
       audioChannels: config.numChannels,
-      audioCodec: this.getEncoder(config.encoder),
+      audioCodec: media.CodecMimeType.AUDIO_MP3,
       audioSampleRate: config.sampleRate,
-      fileFormat: this.getFormat(config.encoder)
+      fileFormat: media.ContainerFormatType.CFT_MP3,
     };
     this.fileConfigPath = config.path;
     this.fileMediaPath = 'fd://' + this.getFileFD(config.path);
@@ -89,7 +89,7 @@ export class MediaRecorder implements IRecorder {
       profile: avRecorderProfile,
       url: this.fileMediaPath
     }
-    console.info(this.TAG + ' zcyRecordTag _ets realStartRecording  filePath: ' + config.path);
+    console.info(this.TAG + ' zcyRecordTag _ets realStartRecording  filePath: ' + config.path + "AUDIO_MP3");
     if (this.mAvRecorder != null && this.mAvRecorder != undefined) {
       this.mAvRecorder.prepare(avRecorderConfig, (err: BusinessError) => {
         if (err) {
@@ -209,6 +209,8 @@ export class MediaRecorder implements IRecorder {
         return media.CodecMimeType.AUDIO_AAC;
       case AudioEncoder.opus:
         return media.CodecMimeType.AUDIO_AAC;
+      case AudioEncoder.mp3:
+        return media.CodecMimeType.AUDIO_MP3;
       default:
         return media.CodecMimeType.AUDIO_AAC;
     }
@@ -225,6 +227,8 @@ export class MediaRecorder implements IRecorder {
         return media.ContainerFormatType.CFT_MPEG_4A;
       case AudioEncoder.opus:
         return media.ContainerFormatType.CFT_MPEG_4A;
+      case AudioEncoder.mp3:
+        return media.ContainerFormatType.CFT_MP3;
       default:
         return media.ContainerFormatType.CFT_MPEG_4A
     }
